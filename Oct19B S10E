@@ -1,0 +1,46 @@
+https://www.codechef.com/OCT19B/problems/S10E
+
+#include<stdio.h>
+
+int main(){
+  int t;
+  scanf("%d",&t);
+  while(t){
+    int n,i;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++){
+      scanf("%d",&a[i]);
+    }
+    int count=0,j,x;
+    for(i=0;i<n;i++){
+      int c1=0;
+      j=i;
+      x=5;
+      if(i<=4){
+      while(j){
+        if(a[i]<a[i-j]){
+          c1=c1+1;
+        }
+          j--;
+      }
+      if(c1==i)
+        count++;
+      }
+      if(i>4){
+        while(x){
+          if(a[i]<a[i-x])
+            c1=c1+1;
+          x--;
+          }
+          if(c1==5)
+            count++;
+      }
+    }
+
+    printf("%d\n",count);
+
+    t--;
+  }
+
+}
